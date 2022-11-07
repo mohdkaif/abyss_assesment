@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Repositories\PostInterface;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -17,10 +16,32 @@ class PostController extends Controller
         $this->PostRepository = $PostRepository;
     }
 
-    public  function index()
+    public  function index(Request $request)
     {
-        dd('ds');
+        try {
+            $data = $this->PostRepository->getPostByPagination($request);
+            return response()->json([
+                'data'   => $data,
+                'status' => Response::HTTP_CREATED,
+            ], Response::HTTP_CREATED);
+        } catch (\Exception $exception) {
+            return response()->json([$exception->getMessage(), Response::HTTP_OK]);
+        }
     }
+
+    public  function show($id)
+    {
+        try {
+            $data = $this->PostRepository->getPostById($id);
+            return response()->json([
+                'data'   => $data,
+                'status' => Response::HTTP_CREATED,
+            ], Response::HTTP_CREATED);
+        } catch (\Exception $exception) {
+            return response()->json([$exception->getMessage(), Response::HTTP_OK]);
+        }
+    }
+
     public  function store(Request $request)
     {
         try {
@@ -37,10 +58,10 @@ class PostController extends Controller
                 ], Response::HTTP_BAD_REQUEST);
             }
 
-            $this->PostRepository->createPost($request);
+            $data = $this->PostRepository->createPost($request);
 
             return response()->json([
-                'data'   => $request->all(),
+                'data'   => $data,
                 'status' => Response::HTTP_CREATED,
             ], Response::HTTP_CREATED);
         } catch (\Exception $exception) {

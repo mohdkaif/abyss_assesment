@@ -13,25 +13,33 @@ class PostRepository implements PostInterface
 
     public function getPostById($id)
     {
-        return Post::find($id);
+        return Post::Select('name', 'description', 'type', 'image_file')->find($id);
     }
 
     public function createPost($request)
     {
         $post = new Post();
         $post->name = $request->name;
+        $post->description = $request->description;
+        $post->type = $request->type;
         if (!empty($request->image_file)) {
             $fileName = time() . '_' . $request->image_file->getClientOriginalName();
-            $filePath = $request->file('image_file')->storeAs('uploads', $fileName, 'public');
-           // $fileModel->name = time() . '_' . $request->image_file->getClientOriginalName();
+            $filePath = $request->file('image_file')->storeAs('uploads', $fileName, 'private');
             $post->image_file = '/storage/' . $filePath;
-            //dd($request->image_file);
-           // $file_name = $request->image_file['name'];
-          //  $image = Storage::put($file_name, '', 'public');
         }
-        // print_r($image);die;
-      //  $post->image_file = $image;
         $post->save();
-        return true;
+        $data['name'] = $post->name;
+        $data['description'] = $post->description;
+        $data['type'] = $post->type;
+        return $data;
+    }
+
+    public function getPostByPagination($request)
+    {
+        $limit = $request->limit ? $request->limit : 10;
+        $page = $request->page && $request->page > 0 ? $request->page : 1;
+        $skip = ($page - 1) * $limit;
+        $posts = Post::Select('name', 'description', 'type')->offset($skip)->limit($limit)->get();
+        return $posts;
     }
 }
