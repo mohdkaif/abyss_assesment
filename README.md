@@ -30,7 +30,7 @@ git clone https://github.com/mohdkaif/abyss_assesment.git
 ```
 - go to directory
 ```
-cd music-lib
+cd project_dir
 ```
 - Run Composer Install
 ```
