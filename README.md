@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+=======
+# Abyss Task Assesment
+>>>>>>> 1b09d2071c8c6814d821a2d692637455126c539a
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -11,6 +15,7 @@
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
+<<<<<<< HEAD
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
 - [Powerful dependency injection container](https://laravel.com/docs/container).
 - Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
@@ -20,6 +25,17 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
+=======
+## About Task 
+
+Using PHP and MySQL (you can use any PHP framework) create the following models
+and relationships.
+1. Show Post List (with pagination and offset limit 10 per page)
+2. Create Post
+3. Single Post
+4. Delete Old Post (after 30 days cron job)
+
+>>>>>>> 1b09d2071c8c6814d821a2d692637455126c539a
 
 ## Learning Laravel
 
@@ -33,7 +49,22 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+<<<<<<< HEAD
 ### Premium Partners
+=======
+```
+git clone https://github.com/mohdkaif/abyss_assesment.git
+```
+- go to directory
+```
+cd project_dir
+```
+- Run Composer Install
+```
+composer install && composer dump-autoload
+```
+- create new .env file and copy data from .env.example and paste in new .env file (if not exist .env)
+>>>>>>> 1b09d2071c8c6814d821a2d692637455126c539a
 
 - **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
@@ -63,4 +94,34 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
+<<<<<<< HEAD
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======
+-Api End Point
+
+1. Show Post List (page and limit) (GET METHOD)
+
+```
+http://localhost:8000/api/post?page=1&limit=10
+```
+
+2. Show Single Post (GET METHOD)
+
+```
+http://localhost:8000/api/post/1
+```
+
+3. Create Post(POST METHOD)
+
+```
+http://localhost:8000/api/post
+```
+4. Delete Old POST more than 30 days (using command) or set cron Job on server
+
+```
+php artisan post:truncate
+```
+```
+* * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1
+```
+>>>>>>> 1b09d2071c8c6814d821a2d692637455126c539a
