@@ -1,0 +1,195 @@
+{
+	"id": "658ebb07-0733-2bc5-792d-5e200afcb8ca",
+	"name": "abyss",
+	"description": "",
+	"order": [
+		"9f8a1970-868e-d50c-f5b9-f37824328319",
+		"7719522f-3c6c-a7b7-1a0b-abd95a7fdf07",
+		"8367eeec-d5c7-4922-2ddc-87bcb5e4412b"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1667765746905,
+	"owner": "4966370",
+	"public": false,
+	"requests": [
+		{
+			"id": "7719522f-3c6c-a7b7-1a0b-abd95a7fdf07",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/api/post?limit=10&page=2",
+			"queryParams": [
+				{
+					"key": "limit",
+					"value": "10",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "page",
+					"value": "2",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "This api should return only name, type and description after saving data.This api should return only name, type and description after saving data.",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image_file",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1667815416336,
+			"name": "Get Post By Pagination",
+			"description": "",
+			"collectionId": "658ebb07-0733-2bc5-792d-5e200afcb8ca",
+			"responses": []
+		},
+		{
+			"id": "8367eeec-d5c7-4922-2ddc-87bcb5e4412b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:8000/api/post/5",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "name",
+					"value": "This api should return only name, type and description after saving data.This api should return only name, type and description after saving data.",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image_file",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1667812309056,
+			"name": "Get Post By Id",
+			"description": "",
+			"collectionId": "658ebb07-0733-2bc5-792d-5e200afcb8ca",
+			"responses": []
+		},
+		{
+			"id": "9f8a1970-868e-d50c-f5b9-f37824328319",
+			"headers": "//Content-Type: application/x-www-form-urlencoded\n//enctype: multipart/form-data\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": false
+				},
+				{
+					"key": "enctype",
+					"value": "multipart/form-data",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"url": "localhost:8000/api/post",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "name",
+					"value": "what is Lorem7",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "image_file",
+					"value": "pexels-noé-villalta-photography-2388657.jpg",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "description",
+					"value": "asdsf This api should return only name, type This api should return o",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "type",
+					"value": "3",
+					"description": "[1,2,3]",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1667814692229,
+			"name": "Create Post",
+			"description": "",
+			"collectionId": "658ebb07-0733-2bc5-792d-5e200afcb8ca",
+			"responses": []
+		}
+	]
+}
