@@ -64,7 +64,7 @@ php artisan migrate
 ```
 php artisan db:seed 
 ```
-
+- For Run Server
 ```
 php artisan serve
 
