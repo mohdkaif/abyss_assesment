@@ -1,17 +1,17 @@
-# Music Lib
+# Abyss Task Assesment
 
 
 
 
-## About Task Music Lib
+## About Task 
 
 Using PHP and MySQL (you can use any PHP framework) create the following models
 and relationships.
-1. Show Artist (with albums and singles)
-2. Show Albums (with songs)
-3. Show Song (with the artist name, and album name and year [if any])
-4. List Artists (with number of albums and singles)
-5. List Songs (with name matching a search parameter)
+1. Show Post List (with pagination and offset limit 10 per page)
+2. Create Post
+3. Single Post
+4. Delete Old Post (after 30 days cron job)
+
 
 
 ## Setup Project
@@ -26,7 +26,7 @@ and relationships.
 - Laravel 9
 
 ```
-git clone https://github.com/mohdkaif/music-lib.git
+git clone https://github.com/mohdkaif/abyss_assesment.git
 ```
 - go to directory
 ```
@@ -36,7 +36,7 @@ cd music-lib
 ```
 composer install && composer dump-autoload
 ```
-- create new .env file and copy data from .env.example and paste in new .env file
+- create new .env file and copy data from .env.example and paste in new .env file (if not exist .env)
 
 ```
 cp .env.example .env
@@ -75,30 +75,28 @@ http://localhost:8000/
 
 -Api End Point
 
-1. Show Artist (with albums and singles)
+1. Show Post List (page and limit) (GET METHOD)
 
 ```
-http://localhost:8000/artist/1
+http://localhost:8000/api/post?page=1&limit=10
 ```
 
-2. Show Albums (with songs)
+2. Show Single Post (GET METHOD)
 
 ```
-http://localhost:8000/album/1
+http://localhost:8000/api/post/1
 ```
 
-3. Show Song (with the artist name, and album name and year [if any])
+3. Create Post(POST METHOD)
 
 ```
-http://localhost:8000/song/1
+http://localhost:8000/api/post
 ```
-4. List Artists (with number of albums and singles)
+4. Delete Old POST more than 30 days (using command) or set cron Job on server
 
 ```
-http://localhost:8000/artist
+php artisan post:truncate
 ```
-5. List Songs (with name matching a search parameter)
-
 ```
-http://localhost:8000/song?parameter=qu
+* * * * * php /path-to-your-project/artisan schedule:run >> /dev/null 2>&1
 ```
