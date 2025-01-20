@@ -15,6 +15,10 @@ class PostController extends Controller
     {
         $this->PostRepository = $PostRepository;
     }
+    public function newTestMethodUpdated(){
+        $shana='iam kaif wife';
+        return $shana;
+    }
 
     public  function index(Request $request)
     {
