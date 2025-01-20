@@ -11,4 +11,5 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     /////this is master branch changes//
+    //new ;line added
 }
